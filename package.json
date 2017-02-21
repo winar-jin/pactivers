@@ -1,0 +1,23 @@
+{
+  "name": "pactivers",
+  "version": "1.0.0",
+  "description": "The online page of \u0016pactivers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "nodemon": "^1.11.0",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Jin",
+  "license": "ISC"
+}
