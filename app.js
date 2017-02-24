@@ -6,6 +6,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const users = require('./routes/users');
+const plans = require('./routes/plans');
 const router = express.Router();
 // Connect to database
 mongoose.connect(config.database);
@@ -37,6 +38,9 @@ app.use(bodyParser.json());
 
 // User route Middleware
 app.use('/users',users);
+
+// Plans route Middleware
+app.use('/plans',plans);
 
 // Passport Middleware
 app.use(passport.initialize());

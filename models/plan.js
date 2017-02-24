@@ -8,7 +8,8 @@ const PlanSchema = mongoose.Schema({
     },
     week: {
         type: Date,
-        unique: true
+        unique: true,
+        default: Date.now
     },
     plans: [
         {
@@ -30,3 +31,15 @@ const PlanSchema = mongoose.Schema({
 });
 
 const Plan = module.exports = mongoose.model('Plan',PlanSchema);
+
+
+// find planner by _id
+module.exports.findPlannerByid = function(){
+    
+}
+
+
+// Add a Plan
+module.exports.addPlan = function(){
+
+}
