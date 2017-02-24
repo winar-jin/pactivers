@@ -11,4 +11,8 @@ router.post('/add', (req,res,next)=> {
    };
 });
 
+
+router.post('/planner', (req,res,next) => {
+    
+});
 module.exports = router;

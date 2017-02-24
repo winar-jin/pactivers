@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Plan Schems
 const PlanSchema = mongoose.Schema({
-    planer: {
+    planerID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
@@ -34,12 +34,12 @@ const Plan = module.exports = mongoose.model('Plan',PlanSchema);
 
 
 // find planner by _id
-module.exports.findPlannerByid = function(){
-    
+module.exports.findPlannerByid = function(plannerId,callback){
+    return this.findOne({planerID:plannerId}).populate('planerID').exec(callback);
 }
 
 
 // Add a Plan
-module.exports.addPlan = function(){
+module.exports.addPlan = function(planerID,plan,callback){
 
 }

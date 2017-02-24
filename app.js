@@ -8,6 +8,7 @@ const config = require('./config/database');
 const users = require('./routes/users');
 const plans = require('./routes/plans');
 const router = express.Router();
+const nodeSchedule = require('node-schedule');
 // Connect to database
 mongoose.connect(config.database);
 
@@ -20,6 +21,11 @@ mongoose.connection.on('error',(err) =>{
 mongoose.connection.on('connected',() => {
     console.log('Connect to the databse ' + config.database);
 });
+
+// On Disconnected
+mongoose.connection.on('disconnected', function () {    
+    console.log('Mongoose connection disconnected');  
+});  
 
 // Create a server
 const app = express();
@@ -62,3 +68,16 @@ app.get('*', (req,res) => {
 app.listen(port, () => {
     console.log('Server started on port ' + port);
 });
+
+// Timer Module "node-schedule"
+function scheduleCronstyle(){
+    var j = nodeSchedule.scheduleJob('0-59 * * * * *', function(){
+        console.log('scheduleCronstyle:' + new Date());
+    }); 
+    setTimeout(() => {
+        console.log('定时器取消！');
+        j.cancel();
+    },6000);
+}
+
+scheduleCronstyle();
