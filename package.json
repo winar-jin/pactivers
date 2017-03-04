@@ -14,10 +14,10 @@
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
+    "node-schedule": "*",
     "nodemon": "^1.11.0",
     "passport": "*",
-    "passport-jwt": "*",
-    "node-schedule": "*"
+    "passport-jwt": "*"
   },
   "author": "Jin",
   "license": "ISC"

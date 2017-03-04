@@ -1,6 +1,8 @@
 node_modules/
 angular-src/node_modules/
 .vscode/
+npm-debug.log
+angular-src/npm-debug.log
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
