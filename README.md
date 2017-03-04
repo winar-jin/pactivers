@@ -19,6 +19,7 @@ if you want to load this project locally,just following next steps:
 * if you don't want to restart the server frequently,you can install nodemon,it can restart your server automatic,and run it.
 
 `npm install nodemon -g`
+
 `nodemon`  
 > http://localhost:3000
 
