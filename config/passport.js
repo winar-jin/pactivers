@@ -8,6 +8,7 @@ module.exports = function (passport) {
     options.jwtFromRequest = ExtractJwt.fromAuthHeader();
     options.secretOrKey = config.secret;
     passport.use(new JwtStrategy(options, (jwt_payload, done) => {
+        // 考虑：重名问题
         User.getUserByUsername(jwt_payload._doc.name, (err, user) => {
             if (err) {
                 return done(err,false);

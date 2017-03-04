@@ -4,8 +4,9 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
+const Plan = require('../models/plan');
 
-// Register
+// Register and Init first plan
 router.post('/register', (req, res, next) => {
     let newUser = new User({
         name: req.body.name,
@@ -22,7 +23,14 @@ router.post('/register', (req, res, next) => {
                 if (err) {
                     res.json({ success: false, msg: 'Failed to register a user!' });
                 } else {
-                    res.json({ success: true, msg: 'User register!' });
+                    let date = new Date();
+                    Plan.initByRegister(user._id,date, (err,plan) => {
+                        if(err){
+                            throw err;
+                        }else{
+                            res.json({ success: true, msg: 'User register! And first plan init.' });
+                        }
+                    });
                 }
             });
         }

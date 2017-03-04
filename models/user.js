@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const Plan = require('./plan');
 
 // User Schems
 const UserSchema = mongoose.Schema({
@@ -42,4 +43,9 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
 module.exports.getUserByUsername = function(name,callback){
     const query = {name: name};
     User.findOne(query,callback);
+}
+
+// return every user's _id
+module.exports.allUser = function(callback){
+    this.find({},'_id',callback);
 }
