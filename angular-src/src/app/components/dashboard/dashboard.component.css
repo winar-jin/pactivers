@@ -1,0 +1,15 @@
+td,th{
+    text-align: center;
+}
+.planInAll .left,.planInAll .right{
+    display: table-cell;
+}
+.planInAll .left.plans{
+    width: 75%;
+}
+.planInAll .left.plans table th#index{
+    width: 10%;
+}
+.noBorderLeft{
+    border-left: none;
+}

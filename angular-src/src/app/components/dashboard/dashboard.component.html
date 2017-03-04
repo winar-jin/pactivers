@@ -1,0 +1,37 @@
+<div *ngIf="user">
+    <h2 class="page-header">{{userPlans}}</h2>
+</div>
+
+<div class="planInAll">
+    <div class="left plans">
+        <table id="planTable" class="table table-responsive" border="1" cellspacing="0" align="center">
+        <thead>
+            <tr>
+                <th id="index">index</th>
+                <th id="plan">plan</th>
+                <th id="score">score</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    </div>
+    <div class="right summary">
+        <table id="planTable" class="table table-responsive" border="1" cellspacing="0" align="center">
+        <thead>
+            <tr>
+                <th id="averageScore">averageScore</th>
+                <th id="summary">summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<button class="btn btn-default" id="insertIntotable" (click)="insertToTable()">添加一条记录</button>
